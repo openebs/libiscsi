@@ -44,7 +44,7 @@
 void
 iscsi_log_to_stderr(int level, const char *message)
 {
-	fprintf(stderr, "libiscsi:%d %s\n", level, message);
+	printf("libiscsi:%d %s\n", level, message);
 }
 
 void

@@ -764,7 +764,12 @@ iscsi_write_to_socket(struct iscsi_context *iscsi)
 				return -1;
 			}
 			iscsi->outqueue_current = iscsi->outqueue;
-			
+
+			if(iscsi->outqueue_current->scsi_cbdata.task != NULL) {
+				iscsi->outqueue_current->scsi_cbdata.task->statsn = iscsi->statsn;
+				iscsi->outqueue_current->scsi_cbdata.task->maxcmdsn = iscsi->maxcmdsn;
+			}
+
 			/* set exp statsn */
 			iscsi_pdu_set_expstatsn(iscsi->outqueue_current, iscsi->statsn + 1);
 

@@ -234,7 +234,8 @@ iscsi_test_cu_SOURCES = iscsi-test-cu.c \
 	test_async_read.c \
 	test_async_write.c \
 	test_async_abort_simple.c \
-	test_async_lu_reset_simple.c
+	test_async_lu_reset_simple.c \
+	test_async_random_workload.c
 
 endif
 
